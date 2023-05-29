@@ -2,10 +2,10 @@
 This repository contains the implementation of [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](https://arxiv.org/abs/2305.17100), by Kai Zhang, Jun Yu, Zhiling Yan, Yixin Liu, Eashan Adhikarla, Sunyang Fu, Xun Chen, Chen Chen, Yuyin Zhou, Xiang Li, Lifang He, Brian D. Davison, Quanzheng Li, Yong Chen, Hongfang Liu, Lichao Sun.
 
 # Release Note
-Given my current workload, I will be able to share the code after June 5, 2023. Thanks for your patience.
+Given my current heavy workload 🥵💻, I will be able to clean and share the code after June 5, 2023. Thanks for your patience.
 
 ## Citations
-If you use SciFive model or our code for publications, please cite: 
+If you use BiomedGPT model or our code for publications, please cite: 
 ```
 @misc{zhang2023biomedgpt,
       title={BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks}, 

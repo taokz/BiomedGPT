@@ -1,11 +1,101 @@
+<!---
+Copyright 2022 The OFA-Sys Team. 
+Copyright 2023 Kai Zhang @ Lehigh. 
+All rights reserved.
+This source code is licensed under the Apache 2.0 license found in the LICENSE file in the root directory.
+-->
+
 # BiomedGPT
-This repository contains the implementation of [BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks](https://arxiv.org/abs/2305.17100), by Kai Zhang, Jun Yu, Zhiling Yan, Yixin Liu, Eashan Adhikarla, Sunyang Fu, Xun Chen, Chen Chen, Yuyin Zhou, Xiang Li, Lifang He, Brian D. Davison, Quanzheng Li, Yong Chen, Hongfang Liu, Lichao Sun.
+[BiomedGPT](https://arxiv.org/abs/2305.17100) is developed based on [OFA](https://github.com/OFA-Sys/OFA) but pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details are shown in [datasets.md](datasets.md). Feel free to contact us or post issues. 
 
-# Release Note
-Given my current heavy workload 🥵💻, I will be able to clean and share the code after June 5, 2023. Thanks for your patience.
+Please kindly note that this repository is still a work in progress. I am currently occupied with several important tasks 🥵 💻, but I will do my best to complete the main body by June 14 after finishing my current commitments. Thank you for your understanding and patience. The following is my plan based on my recent schedule:
 
-## Citations
-If you use BiomedGPT model or our code for publications, please cite: 
+- [x] **June 9**: release pre-trained checkpoints; release the data preprocessing and fine-tuning codes for VQA and Captioning. 
+- [ ] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
+- [ ] **June 13**: release the data preprocessing and fine-tuning codes for image classification; release data preprocessing scripts for pretraining.
+- [ ] **June 14**: release pretraining codes.
+<br></br>
+
+
+# Checkpoints
+We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/ratai8yyrot28zp/AAA0jaDhRWZ-uSl8GlXF09Bda?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md (coming soon)](checkpoints.md). 
+<br></br>
+
+# Installation
+```bash
+git clone https://github.com/taokz/BiomedGPT
+conda env create -f biomedgpt.yml
+python -m pip install pip==21.2.4
+pip install fairseq
+```
+<br></br>
+
+
+# Implementation
+We provide the preprocessing, pretraining, finetuning and inference scripts in the `scripts/` folder. You can follow the directory setting below:
+
+```
+BiomedGPT/
+├── checkpoints/
+├── datasets/
+│   ├── pretraining/
+│   ├── finetuning/
+│   └── ...
+├── scripts/
+│   ├── preprocess/
+│   │   ├── pretraining/
+│   │   └── finetuning/
+│   ├── pretrain/
+│   ├── vqa/
+│   └── ...
+└── ...
+```
+
+## Pretraining
+Please follow [datasets.md](datasets.md) to prepare pretraining datasets, which includes 4 TSV files: <code>vision_language.tsv</code>, <code>text.tsv</code>, <code>image.tsv</code> and <code>detection.tsv</code> in the directory of `./datasets/pretraining/`.
+
+<pre>
+cd scripts/pretraining
+bash pretrain_base.sh
+</pre>
+Feel free to modify the hyperparameters in the bash script for your requirements or ablation study.
+<br></br>
+
+## Downstreams
+We provide the run scripts of fine-tuning and inference. There will be log files during execution. Before fine-tuning or inference, please refer to 
+<details>
+    <summary><b>Visual Question Answering</b></summary>
+<pre>
+cd scripts/vqa
+# for fine-tuning
+bash train_vqa_rad_beam.sh
+# for inference
+bash evaluate_vqa_rad_beam.sh
+</pre>
+</details>
+<details>
+    <summary><b>Image Captioning</b></summary>
+<pre>
+cd scripts/caption
+# for fine-tuning
+bash train_peir_gross.sh
+# for inference
+bash evaluate_peir_gross.sh
+</pre>
+</details>
+
+<br></br>
+
+# Related Codebase
+* [OFA](https://github.com/OFA-Sys/OFA)
+* [Fairseq](https://github.com/pytorch/fairseq)
+* [taming-transformers](https://github.com/CompVis/taming-transformers)
+* [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch)
+<br></br>
+
+
+# Citation
+If you use BiomedGPT model or our code for publications, please cite 🤗: 
 ```
 @misc{zhang2023biomedgpt,
       title={BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks}, 
@@ -16,5 +106,4 @@ If you use BiomedGPT model or our code for publications, please cite:
       primaryClass={cs.CL}
 }
 ```
-
-Visitor Count: ![Visitor Count](https://profile-counter.glitch.me/{taokz}/count.svg)
+<br></br>

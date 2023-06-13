@@ -11,7 +11,7 @@ This source code is licensed under the Apache 2.0 license found in the LICENSE f
 Please kindly note that this repository is still a work in progress. I am currently occupied with several important tasks 🥵 💻, but I will do my best to complete the main body by June 14 after finishing my current commitments. Thank you for your understanding and patience. The following is my plan based on my recent schedule:
 
 - [x] **June 9**: release pre-trained checkpoints; release the data preprocessing and fine-tuning codes for VQA and Captioning. 
-- [ ] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
+- [x] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
 - [ ] **June 13**: release the data preprocessing and fine-tuning codes for image classification; release data preprocessing scripts for pretraining.
 - [ ] **June 14**: release pretraining codes.
 <br></br>
@@ -81,6 +81,26 @@ cd scripts/caption
 bash train_peir_gross.sh
 # for inference
 bash evaluate_peir_gross.sh
+</pre>
+</details>
+<details>
+    <summary><b>Text Summarization</b></summary>
+<pre>
+cd scripts/text_sum
+# for fine-tuning
+bash train_meqsum.sh
+# for inference
+bash evaluate_meqsum.sh
+</pre>
+</details>
+<details>
+    <summary><b>Natural Language Inference</b></summary>
+<pre>
+cd scripts/mednli
+# for fine-tuning
+bash train_mednli.sh
+# for inference
+bash evaluate_mednli.sh
 </pre>
 </details>
 

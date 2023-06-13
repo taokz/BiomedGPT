@@ -9,9 +9,9 @@ ext = ('.jpg')
 
 header_list = ["File_name", "Caption"]
 
-with open(".../../../datasets/finetuning/roco_train.tsv", 'w') as out_train, \
-    open(".../../../datasets/finetuning/roco_test.tsv", 'w') as out_test, \
-    open(".../../../datasets/finetuning/roco_val.tsv", 'w') as out_val:
+with open(".../../../datasets/finetuning/roco/roco_train.tsv", 'w') as out_train, \
+    open(".../../../datasets/finetuning/roco/roco_test.tsv", 'w') as out_test, \
+    open(".../../../datasets/finetuning/roco/roco_val.tsv", 'w') as out_val:
 
     index = 0
     index_train = 0

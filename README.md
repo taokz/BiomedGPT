@@ -18,7 +18,7 @@ Please kindly note that this repository is still a work in progress. I am curren
 
 
 # Checkpoints
-We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/ratai8yyrot28zp/AAA0jaDhRWZ-uSl8GlXF09Bda?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md (coming soon)](checkpoints.md). 
+We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/vqu1q75m4yz96km/AABuKFaxD57_QC6na1xgXbuEa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md (coming soon)](checkpoints.md). 
 <br></br>
 
 # Installation

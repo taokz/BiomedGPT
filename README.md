@@ -106,7 +106,7 @@ bash evaluate_mednli.sh
 <details>
     <summary><b>Image Classification</b></summary>
 <pre>
-cd scripts/mednli
+cd scripts/image_cls
 # for fine-tuning: I provide a template, please set different hyparameters for each dataset in MedMNIST if required.
 bash train_medmnist.sh 
 # for inference: a template

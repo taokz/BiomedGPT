@@ -60,8 +60,8 @@ for scale in ${Scale[@]}; do
       for update_freq in {2,}; do
         echo "update_freq "${update_freq}
 
-        log_file=${log_dir}/${max_epoch}"_"${lr}"_"${update_freq}"_trick.log"
-        save_path=${save_dir}/${max_epoch}"_"${lr}"_"${update_freq}"_trick"
+        log_file=${log_dir}/${max_epoch}"_"${lr}"_"${update_freq}".log"
+        save_path=${save_dir}/${max_epoch}"_"${lr}"_"${update_freq}
         mkdir -p $save_path
 
         CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7,8 python3 -m torch.distributed.launch --nproc_per_node=9 --master_port=${MASTER_PORT} ../../train.py \

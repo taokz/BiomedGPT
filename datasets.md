@@ -31,3 +31,5 @@ Partial datasets are used in the pretraining
 
 ## Data Preparation Notes
 - PathVQA's `trainval_ans2label.pkl` is located in `PathVQA/split/qas`.
+- Before preprocessing the VQA-RAD dataset, it's necessary to inspect the data and search for any instances of `\t`. These instances might cause issues and it's recommended to manually remove them. For instance, changing instances like `slee\t n` to `sleen`. Neglecting this step and proceeding with preprocessing could lead to errors during training.
+- For preprocessing the `MedMNIST` dataset, the following steps are employed: First, the `.npy` files are converted to `.png` images using the command `python medmnist.py --mode 0`. Subsequently, these `.png` images are converted into a `.tsv` file using the command `--mode 1`.

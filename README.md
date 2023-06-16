@@ -12,8 +12,8 @@ Please kindly note that this repository is still a work in progress. I am curren
 
 - [x] **June 9**: release pre-trained checkpoints; release the data preprocessing and fine-tuning codes for VQA and Captioning. 
 - [x] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
-- [ ] **June 13**: release the data preprocessing and fine-tuning codes for image classification; release data preprocessing scripts for pretraining.
-- [ ] **June 14**: release pretraining codes.
+- [x] **June 15**: release the data preprocessing and fine-tuning codes for image classification.
+- [ ] **June 16 or 17**: release data preprocessing scripts and codes for pretraining.
 <br></br>
 
 
@@ -95,6 +95,16 @@ bash evaluate_meqsum.sh
 </details>
 <details>
     <summary><b>Natural Language Inference</b></summary>
+<pre>
+cd scripts/mednli
+# for fine-tuning
+bash train_mednli.sh
+# for inference
+bash evaluate_mednli.sh
+</pre>
+</details>
+<details>
+    <summary><b>Image Classification</b></summary>
 <pre>
 cd scripts/mednli
 # for fine-tuning

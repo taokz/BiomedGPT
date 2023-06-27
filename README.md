@@ -8,17 +8,17 @@ This source code is licensed under the Apache 2.0 license found in the LICENSE f
 # BiomedGPT
 [BiomedGPT](https://arxiv.org/abs/2305.17100) is developed based on [OFA](https://github.com/OFA-Sys/OFA) but pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details are shown in [datasets.md](datasets.md). Feel free to contact us or post issues. 
 
-Please kindly note that this repository is still a work in progress. I am currently occupied with several important tasks 🥵 💻, but I will do my best to complete the main body by June 14 after finishing my current commitments. Thank you for your understanding and patience. The following is my plan based on my recent schedule:
+Please kindly note that this repository is still a work in progress.
 
 - [x] **June 9**: release pre-trained checkpoints; release the data preprocessing and fine-tuning codes for VQA and Captioning. 
 - [x] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
 - [x] **June 15**: release the data preprocessing and fine-tuning codes for image classification.
-- [ ] **June 16 or 17**: release data preprocessing scripts and codes for pretraining.
+- [x] **June 26**: release data preprocessing scripts and codes for pretraining.
 <br></br>
 
 
 # Checkpoints
-We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/vqu1q75m4yz96km/AABuKFaxD57_QC6na1xgXbuEa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md (coming soon)](checkpoints.md). 
+We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/vqu1q75m4yz96km/AABuKFaxD57_QC6na1xgXbuEa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md](checkpoints.md). 
 <br></br>
 
 # Installation
@@ -55,8 +55,8 @@ BiomedGPT/
 Please follow [datasets.md](datasets.md) to prepare pretraining datasets, which includes 4 TSV files: <code>vision_language.tsv</code>, <code>text.tsv</code>, <code>image.tsv</code> and <code>detection.tsv</code> in the directory of `./datasets/pretraining/`.
 
 <pre>
-cd scripts/pretraining
-bash pretrain_base.sh
+cd scripts/pretrain
+bash pretrain_tiny.sh
 </pre>
 Feel free to modify the hyperparameters in the bash script for your requirements or ablation study.
 <br></br>

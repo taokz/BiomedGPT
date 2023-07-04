@@ -10,3 +10,6 @@ Fine-tuned checkpoints of **base**-scale model can be downloaded in the followin
 -   _Peir Gross_:  https://www.dropbox.com/s/fwl0r4qpe8rajas/peir_gross.pt?dl=0
 -   _ROCO_:  https://www.dropbox.com/s/cgvw6q8ozk9uzim/roco.pt?dl=0
 <br></br>
+
+# VQ-GAN Checkpoints
+-  _vqgan_gumbel_f8_8192_:  https://heibox.uni-heidelberg.de/d/2e5662443a6b4307b470/?p=%2Fconfigs&mode=list

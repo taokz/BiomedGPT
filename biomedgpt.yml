@@ -117,4 +117,3 @@ dependencies:
     - yarl==1.8.2
     - zhconv==1.4.3
     - zipp==3.11.0
-prefix: /home/kaz321/anaconda3/envs/biomedgpt

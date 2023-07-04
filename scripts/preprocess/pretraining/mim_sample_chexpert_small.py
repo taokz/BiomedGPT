@@ -15,8 +15,8 @@ args = parser.parse_args()
 
 if args.mode == 0:
     count = 0
-    path_of_the_directory = '.../../../datasets/pretraining/CheXpert-v1.0-small/train'
-    save_path_of_the_directory = '.../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
+    path_of_the_directory = '../../../datasets/pretraining/CheXpert-v1.0-small/train'
+    save_path_of_the_directory = '../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
     for path, dirc, files in os.walk(path_of_the_directory):
         for name in files:
             if name.endswith(ext):
@@ -50,9 +50,9 @@ if args.mode == 0:
 
 if args.mode == 1:
     # used to be fed into VQ-GAN
-    path_of_the_directory = '.../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
+    path_of_the_directory = '../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
     count = 0
-    with open(".../../../datasets/pretraining/chexpert_mid_image_string.tsv", 'w') as out_file:
+    with open("../../../datasets/pretraining/chexpert_mid_image_string.tsv", 'w') as out_file:
         for path, dirc, files in os.walk(path_of_the_directory):
             for name in files:
                 if name.endswith(ext):
@@ -84,9 +84,9 @@ if args.mode == 1:
 
 
 if args.mode == 2:
-    path_of_the_directory = '.../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
+    path_of_the_directory = '../../../datasets/pretraining/CheXpert-v1.0-small/train_resize'
     count = 0
-    with open(".../../../datasets/pretraining/chexpert_image_string.tsv", 'w') as out_file:
+    with open("../../../datasets/pretraining/chexpert_image_string.tsv", 'w') as out_file:
         for path, dirc, files in os.walk(path_of_the_directory):
             for name in files:
                 if name.endswith(ext):
@@ -110,8 +110,11 @@ if args.mode == 2:
 
 if args.mode == 3:
     count = 0
-    with open(".../../../datasets/pretraining/chexpert_image_string.tsv", 'r') as f1, open("../a_dataset/chexpert_image_code.tsv", 'r') as f2:
-        with open(".../../../datasets/pretraining/chexpert.tsv", 'w') as out:
+    '''
+    chexpert_image_code.tsv is created by ./mim_mid_vqgan_code.sh
+    '''
+    with open("../../../datasets/pretraining/chexpert_image_string.tsv", 'r') as f1, open(".../../../datasets/pretraining/chexpert_image_code.tsv", 'r') as f2:
+        with open("../../../datasets/pretraining/chexpert.tsv", 'w') as out:
             for x,y in zip(csv.reader(f1, delimiter='\t'),csv.reader(f2, delimiter='\t')):
                 out.write(x[0] + '\t' + x[1] + '\t' + y[1] + '\n')
                 count += 1

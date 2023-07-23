@@ -19,6 +19,9 @@ Please kindly note that this repository is still a work in progress.
 
 # Checkpoints
 We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/vqu1q75m4yz96km/AABuKFaxD57_QC6na1xgXbuEa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md](checkpoints.md). 
+## Note:
+I recently received a reminder regarding potential policy issues associated with releasing the model checkpoints, due to the fact that not all pretraining / downstream datasets are fully open-sourced. I need to review the relevant policies and licenses to ensure the legality of sharing the weights. Once I can confirm this, I will enable downloading the checkpoints. Thank you for your patience.
+
 <br></br>
 
 # Installation

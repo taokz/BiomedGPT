@@ -1,6 +1,6 @@
 # Fine-tuned Checkpoints
 
-Fine-tuned checkpoints of **base**-scale model can be downloaded in the following links. Details regrading inference hyperparameters are described in the 
+Fine-tuned checkpoints of **base**-scale model can be downloaded in the following links. Details regrading inference hyperparameters are described in the paper.
 
 ## Multi-modal Downstreams
 -   _SLAKE_:  https://www.dropbox.com/s/xk6asgvdezaqtuy/slake.pt?dl=0

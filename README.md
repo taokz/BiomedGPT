@@ -14,7 +14,7 @@ We have updated the fine-tuning receipts to to match or surpass the performance 
 
 <p align="center">
     <br>
-    <img src="examples/performance_overview.png" width="160" />
+    <img src="examples/performance_overview.png" width="600" />
     <br>
 <p>
 

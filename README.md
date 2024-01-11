@@ -6,14 +6,20 @@ This source code is licensed under the Apache 2.0 license found in the LICENSE f
 -->
 
 # BiomedGPT
-[BiomedGPT](https://arxiv.org/abs/2305.17100) is developed based on [OFA](https://github.com/OFA-Sys/OFA) but pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details are shown in [datasets.md](datasets.md). Feel free to contact us or post issues. 
+[BiomedGPT](https://arxiv.org/abs/2305.17100) is developed based on [OFA](https://github.com/OFA-Sys/OFA) but pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
 
-Please kindly note that this repository is still a work in progress.
+Breaking News! 💥 :
 
-- [x] **June 9**: release pre-trained checkpoints; release the data preprocessing and fine-tuning codes for VQA and Captioning. 
-- [x] **June 12**: release the data preprocessing and fine-tuning codes for NLI and text summarization. 
-- [x] **June 15**: release the data preprocessing and fine-tuning codes for image classification.
-- [x] **June 26**: release data preprocessing scripts and codes for pretraining.
+We have updated the fine-tuning receipts to to match or surpass the performance of prior state-of-the-art models, including Med-PaLM M (12B) and GPT-4V. For more details, please refer to the corresponding preprint version was updated. Below is a snapshot comparing these performances.
+
+<p align="center">
+    <br>
+    <img src="examples/performance_overview.png" width="160" />
+    <br>
+<p>
+
+- [] We're updating our codebase and will soon release the latest SOTA checkpoints for various downstream tasks.
+- [] Efforts are underway to translate our code **from fairseq to Hugging Face**, simplifying usage for users.
 <br></br>
 
 

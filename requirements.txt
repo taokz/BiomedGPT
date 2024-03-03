@@ -1,0 +1,18 @@
+-e ./fairseq/
+opencv-python
+timm
+ftfy==6.0.3
+tensorboardX==2.4.1
+pycocotools==2.0.4
+pycocoevalcap==1.2
+pytorch_lightning
+einops
+datasets
+rouge_score
+soundfile
+editdistance
+librosa
+python-Levenshtein
+zhconv
+pypinyin==0.47.1
+g2p_en

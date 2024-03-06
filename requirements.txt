@@ -3,7 +3,7 @@ opencv-python
 timm
 ftfy==6.0.3
 tensorboardX==2.4.1
-pycocotools==2.0.4
+pycocotools
 pycocoevalcap==1.2
 pytorch_lightning
 einops

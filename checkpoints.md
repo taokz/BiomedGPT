@@ -1,8 +1,8 @@
 # Pre-trained Checkpoints
-Pre-trained checkpoints of **base**, **medium**, and **small**-scale models can be accessed via [Dropbox] (https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0)
+Pre-trained checkpoints of **base**, **medium**, and **small**-scale models can be accessed via [Dropbox](https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0)
 
 # Instruction-tuned Checkpoints
-We provided the checkpoints of **base**, **medium**, and **small**-scale models that were instruction-tuned using the combination of [llava_med_instruct_10k.json](https://hanoverprod.z21.web.core.windows.net/med_llava/instruct/llava_med_instruct_10k.json) with training sets from SLAKE and PathVQA. These checkpoints can be accessed via [Dropbox] (https://www.dropbox.com/scl/fo/kbbrogenyz3kekz2q5n6m/ABPcSwiwT7_cPvgEQ8bNKSc?rlkey=enepanbpi5gmbzbr6pds9gz3a&st=l6aoc2za&dl=0)
+We provided the checkpoints of **base**, **medium**, and **small**-scale models that were instruction-tuned using the combination of [llava_med_instruct_10k.json](https://hanoverprod.z21.web.core.windows.net/med_llava/instruct/llava_med_instruct_10k.json) with training sets from SLAKE and PathVQA. These checkpoints can be accessed via [Dropbox](https://www.dropbox.com/scl/fo/kbbrogenyz3kekz2q5n6m/ABPcSwiwT7_cPvgEQ8bNKSc?rlkey=enepanbpi5gmbzbr6pds9gz3a&st=l6aoc2za&dl=0)
 
 # Fine-tuned Checkpoints
 

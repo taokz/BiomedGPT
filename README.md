@@ -138,7 +138,7 @@ bash evaluate_medmnist.sh
 * [Fairseq](https://github.com/pytorch/fairseq)
 * [taming-transformers](https://github.com/CompVis/taming-transformers)
 * [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch)
-* [LLaVA-Med] (https://github.com/microsoft/LLaVA-Med)
+* [LLaVA-Med](https://github.com/microsoft/LLaVA-Med)
 <br></br>
 
 

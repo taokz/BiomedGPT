@@ -34,7 +34,7 @@ We have updated the fine-tuning receipts to to match or surpass the performance 
 # Checkpoints
 We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md](checkpoints.md). 
 ## Note:
-I recently received a reminder regarding potential policy issues associated with releasing the model checkpoints, due to the fact that not all pretraining / downstream datasets are fully open-sourced. I need to review the relevant policies and licenses to ensure the legality of sharing the weights. Once I can confirm this, I will enable downloading the checkpoints. Thank you for your patience.
+We emphasize that BiomedGPT, including its files, code, and checkpoints, is strictly for academic research purposes. Commercial and clinical uses are strictly prohibited for three key reasons: First, BiomedGPT is based on the OFA framework, which carries a non-commercial license that we have inherited. Second, our model is not licensed for use in healthcare settings. Finally, we have not implemented sufficient security measures, and the current model cannot guarantee the accuracy required for medical diagnoses.
 
 <br></br>
 

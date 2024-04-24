@@ -20,6 +20,14 @@ We have updated the fine-tuning receipts to to match or surpass the performance 
 
 - [] We're updating our codebase and will soon release the latest SOTA checkpoints for various downstream tasks.
 - [] Efforts are underway to translate our code **from fairseq to Hugging Face**, simplifying usage for users.
+- [x] We used instruction following data (10k) from LLaVA-Med to tune our pre-trained checkpoints, and showed much better zero-shot performance on the VQA-RAD test set.
+
+<p align="center">
+    <br>
+    <img src="examples/instruct_biomedgpt.jpg" width="600" />
+    <br>
+<p>
+
 <br></br>
 
 
@@ -130,6 +138,7 @@ bash evaluate_medmnist.sh
 * [Fairseq](https://github.com/pytorch/fairseq)
 * [taming-transformers](https://github.com/CompVis/taming-transformers)
 * [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch)
+* [LLaVA-Med] (https://github.com/microsoft/LLaVA-Med)
 <br></br>
 
 

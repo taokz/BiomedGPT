@@ -6,29 +6,7 @@ This source code is licensed under the Apache 2.0 license found in the LICENSE f
 -->
 
 # BiomedGPT
-[BiomedGPT](https://arxiv.org/abs/2305.17100) is developed based on [OFA](https://github.com/OFA-Sys/OFA) but pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
-
-Breaking News! 💥 :
-
-We have updated the fine-tuning receipts to to match or surpass the performance of prior state-of-the-art models, including Med-PaLM M (12B) and GPT-4V. For more details, please refer to the corresponding preprint version was updated. Below is a snapshot comparing these performances.
-
-<p align="center">
-    <br>
-    <img src="examples/performance_overview.png" width="600" />
-    <br>
-<p>
-
-- [] We're updating our codebase and will soon release the latest SOTA checkpoints for various downstream tasks.
-- [] Efforts are underway to translate our code **from fairseq to Hugging Face**, simplifying usage for users.
-- [x] We used instruction following data (10k) from LLaVA-Med to tune our pre-trained checkpoints, and showed much better zero-shot performance on the VQA-RAD test set.
-
-<p align="center">
-    <br>
-    <img src="examples/instruct_biomedgpt.jpg" width="600" />
-    <br>
-<p>
-
-<br></br>
+[BiomedGPT](https://arxiv.org/abs/2305.17100) is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
 
 
 # Checkpoints
@@ -145,13 +123,13 @@ bash evaluate_medmnist.sh
 # Citation
 If you use BiomedGPT model or our code for publications, please cite 🤗: 
 ```
-@misc{zhang2023biomedgpt,
-      title={BiomedGPT: A Unified and Generalist Biomedical Generative Pre-trained Transformer for Vision, Language, and Multimodal Tasks}, 
-      author={Kai Zhang and Jun Yu and Zhiling Yan and Yixin Liu and Eashan Adhikarla and Sunyang Fu and Xun Chen and Chen Chen and Yuyin Zhou and Xiang Li and Lifang He and Brian D. Davison and Quanzheng Li and Yong Chen and Hongfang Liu and Lichao Sun},
-      year={2023},
-      eprint={2305.17100},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{zhang2024generalist,
+  title={A generalist vision--language foundation model for diverse biomedical tasks},
+  author={Zhang, Kai and Zhou, Rong and Adhikarla, Eashan and Yan, Zhiling and Liu, Yixin and Yu, Jun and Liu, Zhengliang and Chen, Xun and Davison, Brian D and Ren, Hui and others},
+  journal={Nature Medicine},
+  pages={1--13},
+  year={2024},
+  publisher={Nature Publishing Group US New York}
 }
 ```
 <br></br>

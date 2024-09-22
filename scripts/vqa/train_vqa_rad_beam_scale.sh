@@ -11,7 +11,7 @@ export MASTER_PORT=8314
 # The rank of this worker, should be in {0, ..., WORKER_CNT-1}, for single-worker training, please set to 0
 export RANK=0 
 
-data_dir=../../datasets/finetuning/VQA-RAD
+data_dir=../../datasets/finetuning/vqa-rad
 # since PubMedCLIP does not have valid set, here we also directly use test set.
 data=${data_dir}/train_val.tsv,${data_dir}/test.tsv
 ans2label_file=${data_dir}/trainval_ans2label.pkl
@@ -37,14 +37,11 @@ for scale in ${Scale[@]}; do
     if [[ $scale =~ "tiny" ]]; then
         batch_size=64
         patch_image_size=256
-        ans2label_file=${data_dir}/trainval_ans2label_pubmedclip.pkl
     elif [[ $scale =~ "medium" ]]; then
         batch_size=32
         patch_image_size=256
-        ans2label_file=${data_dir}/trainval_ans2label_pubmedclip.pkl
     elif [[ $scale =~ "base" ]]; then
         batch_size=16
-        ans2label_file=${data_dir}/trainval_ans2label_pubmedclip.pkl
         patch_image_size=384
     fi   
     update_freq=4

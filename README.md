@@ -5,29 +5,42 @@ All rights reserved.
 This source code is licensed under the Apache 2.0 license found in the LICENSE file in the root directory.
 -->
 
-# BiomedGPT
+# 🧑‍⚕️ BiomedGPT
+*A Generalist Vision-Language Foundation Model for Diverse Biomedical Tasks.*
+
 [BiomedGPT](https://arxiv.org/abs/2305.17100) is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
 
-Please check out this [Colab notebook](https://colab.research.google.com/drive/1AMG-OwmDpnu24a9ZvCNvZi3BZwb3nSfS?usp=sharing) for Fairseq-free inference. Warning: Extensive experiments using transformers have not been conducted, so we cannot confirm whether the results from transformers and fairseq are fully aligned.
+## Installation (Linux)
 
-# Checkpoints
-We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md](checkpoints.md). 
-## Note:
-We emphasize that BiomedGPT, including its files, code, and checkpoints, is strictly for academic research purposes. Commercial and clinical uses are strictly prohibited for three key reasons: First, BiomedGPT is based on the OFA framework, which carries a non-commercial license that we have inherited. Second, our model is not licensed for use in healthcare settings. Finally, we have not implemented sufficient security measures, and the current model cannot guarantee the accuracy required for medical diagnoses.
-
-<br></br>
-
-# Installation
+1. Clone this repository and navigate to the BiomedGPT folder
 ```bash
 git clone https://github.com/taokz/BiomedGPT
-conda env create -f biomedgpt.yml
-python -m pip install pip==21.2.4
-pip install fairseq
+cd BiomedGPT/
 ```
-<br></br>
+
+2. Install required packages
+```Shell
+conda create --name biomedgpt python=3.7.4
+python -m pip install pip==21.2.4
+pip install -r requirements.txt
+```
+
+### Quick Start with Huggingface's transformers
+
+Please check out this [Colab notebook](https://colab.research.google.com/drive/1AMG-OwmDpnu24a9ZvCNvZi3BZwb3nSfS?usp=sharing) for Fairseq-free inference. 
+
+**Warning:** Extensive experiments using transformers have not been conducted, so we cannot confirm whether the results from transformers and fairseq are fully aligned.
+
+## Checkpoints
+We provid pretrained checkpoints of BiomedGPT (<a href="https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0">Dropbox</a>), which can be put in the `scripts/` folder for further development. For finetuned checkpoints, please refer to [checkpoints.md](checkpoints.md). 
+
+transformers-compatible weights are accessible through the [collection ](https://huggingface.co/collections/PanaceaAI/biomedgpt-v1-66ca7c51e378662e15178be3).
+
+### Note:
+We emphasize that BiomedGPT, including its files, code, and checkpoints, is strictly for academic research purposes. Commercial and clinical uses are strictly prohibited for three key reasons: First, BiomedGPT is based on the OFA framework, which carries a non-commercial license that we have inherited. Second, our model is not licensed for use in healthcare settings. Finally, we have not implemented sufficient security measures, and the current model cannot guarantee the accuracy required for medical diagnoses.
 
 
-# Implementation
+## Implementation
 We provide the preprocessing, pretraining, finetuning and inference scripts in the `scripts/` folder. You can follow the directory setting below:
 
 ```
@@ -55,7 +68,9 @@ cd scripts/pretrain
 bash pretrain_tiny.sh
 </pre>
 Feel free to modify the hyperparameters in the bash script for your requirements or ablation study.
-<br></br>
+
+### Zero-shot VQA inference using pre-trained checkpoints
+Add ```--zero-shot``` argument in the script. Example script: ```/scripts/vqa/evaluate_vqa_rad_zero_shot.sh```.
 
 ## Downstreams
 We provide the run scripts of fine-tuning and inference. There will be log files during execution. Before fine-tuning or inference, please refer to 
@@ -65,8 +80,10 @@ We provide the run scripts of fine-tuning and inference. There will be log files
 cd scripts/vqa
 # for fine-tuning
 bash train_vqa_rad_beam.sh
-# for inference
+# for inference using fine-tuned weights
 bash evaluate_vqa_rad_beam.sh
+# for zero-shot inference using instruction-tuned weights
+bash evaluate_vqa_rad_unconstrained.sh
 </pre>
 </details>
 <details>
@@ -117,7 +134,6 @@ bash evaluate_medmnist.sh
 * [Fairseq](https://github.com/pytorch/fairseq)
 * [taming-transformers](https://github.com/CompVis/taming-transformers)
 * [self-critical.pytorch](https://github.com/ruotianluo/self-critical.pytorch)
-* [LLaVA-Med](https://github.com/microsoft/LLaVA-Med)
 <br></br>
 
 

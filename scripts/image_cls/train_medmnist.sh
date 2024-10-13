@@ -13,26 +13,39 @@ export MASTER_PORT=8514
 export RANK=0 
 
 declare -a DatasetArray=("bloodmnist" "breastmnist" "dermamnist" "pathmnist" "pneumoniamnist")
+declare -a Scale=("tiny" "medium" "base")
 
 data_dir=../../datasets/finetuning/MedMNIST
+
+for scale in ${Scale[@]}; do
 for dataset in ${DatasetArray[@]}; do
     data=${data_dir}/${dataset}_train.tsv,${data_dir}/${dataset}_val.tsv
     ans2label_file=${data_dir}/${dataset}_class2label.pkl
-    restore_file=../../checkpoints/biomedgpt_base.pt
+    restore_file=../../checkpoints/biomedgpt_${scale}.pt
     selected_cols=0,2
 
-    log_dir=./${dataset}_logs/base
-    save_dir=../../checkpoints/tuned_checkpoints/MedMNIST/base/${dataset}
+    log_dir=./${dataset}_logs/${scale}
+    save_dir=../../checkpoints/tuned_checkpoints/MedMNIST/${scale}/${dataset}
     mkdir -p $log_dir $save_dir
 
     bpe_dir=../../utils/BPE
     user_dir=../../module
 
     task=image_classify
-    arch=ofa_base
+    arch=ofa_${scale}
     criterion=adjust_label_smoothed_cross_entropy
     label_smoothing=0.1
     batch_size=32
+    ## increase the batch size if the gpu memory > 24 gb
+    if [[ $scale =~ "tiny" ]]; then
+        batch_size=64
+    elif [[ $scale =~ "medium" ]]; then
+        batch_size=64
+    elif [[ $scale =~ "base" ]]; then
+        batch_size=32
+    else
+        batch_size=4
+    fi
     update_freq=4
     resnet_drop_path_rate=0.0
     encoder_drop_path_rate=0.1
@@ -40,23 +53,24 @@ for dataset in ${DatasetArray[@]}; do
     dropout=0.1
     attention_dropout=0.0
     max_src_length=128
-    max_tgt_length=30
+    max_tgt_length=64
     num_bins=1000
     patch_image_size=256
 
     echo "finetune on " ${dataset} "dataset" 
 
-    for total_num_updates in {25000,}; do
-    echo "total_num_updates "${total_num_updates}
-    for warmup_updates in {1000,}; do
-        echo "warmup_updates "${warmup_updates}  
+    for max_epoch in {5,}; do
+    echo "max_epoch "${max_epoch}
+    
+    for warmup_ratio in {0.6,}; do
+        echo "warmup_ratio "${warmup_ratio}
         for lr in {5e-5,}; do
         echo "lr "${lr}
-        for patch_image_size in {256,}; do
+        for patch_image_size in {384,}; do
             echo "patch_image_size "${patch_image_size}
 
-            log_file=${log_dir}/${total_num_updates}"_"${warmup_updates}"_"${lr}"_"${patch_image_size}"_rank"${RANK}".log"
-            save_path=${save_dir}/${total_num_updates}"_"${warmup_updates}"_"${lr}"_"${patch_image_size}
+            log_file=${log_dir}/${max_epoch}"_"${warmup_ratio}"_"${lr}"_"${patch_image_size}"_rank"${RANK}".log"
+            save_path=${save_dir}/${max_epoch}"_"${warmup_ratio}"_"${lr}"_"${patch_image_size}
             mkdir -p $save_path
 
             python3 -m torch.distributed.launch --nproc_per_node=${GPUS_PER_NODE} --nnodes=${WORKER_CNT} --node_rank=${RANK} --master_addr=${MASTER_ADDR} --master_port=${MASTER_PORT} ../../train.py \
@@ -92,8 +106,7 @@ for dataset in ${DatasetArray[@]}; do
                 --clip-norm=1.0 \
                 --lr-scheduler=polynomial_decay \
                 --lr=${lr} \
-                --total-num-update=${total_num_updates} \
-                --warmup-updates=${warmup_updates} \
+                --max-epoch=${max_epoch} --warmup-ratio=${warmup_ratio} \
                 --log-format=simple \
                 --log-interval=10 \
                 --fixed-validation-seed=9 \
@@ -123,5 +136,6 @@ for dataset in ${DatasetArray[@]}; do
         done
     done
     done
-    echo "complete finetuning on " ${dataset} "dataset" 
+    echo "complete finetuning on "${dataset}" dataset with "${scale}" model."
+done
 done

@@ -112,8 +112,6 @@ class UnifyTask(OFATask):
         self.pure_text_dataset = None
         self.pure_image_dataset = None
         self.detection_dataset = None
-        self.cfg.detection_data = None
-        self.cfg.text_data = None
         if self.cfg.text_data is not None:
             self.pure_text_dataset = FileDataset(self.cfg.text_data, self.cfg.text_selected_cols)
         if self.cfg.image_data is not None:

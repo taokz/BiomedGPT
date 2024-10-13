@@ -5,7 +5,7 @@ All rights reserved.
 This source code is licensed under the Apache 2.0 license found in the LICENSE file in the root directory.
 -->
 
-# 🧑‍⚕️ BiomedGPT
+# BiomedGPT
 *A Generalist Vision-Language Foundation Model for Diverse Biomedical Tasks.*
 
 [BiomedGPT](https://arxiv.org/abs/2305.17100) is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
@@ -71,6 +71,8 @@ Feel free to modify the hyperparameters in the bash script for your requirements
 
 ### Zero-shot VQA inference using pre-trained checkpoints
 Add ```--zero-shot``` argument in the script. Example script: ```/scripts/vqa/evaluate_vqa_rad_zero_shot.sh```.
+
+**Warning:** The current implementation is not yet designed for chatbot or copilot applications, as its primary focus is on learning general representations in medicine that can be transferred to downstream tasks, as outlined in our paper. Large-scale training and instruction tuning for improving robust conversational abilities are still in progress.
 
 ## Downstreams
 We provide the run scripts of fine-tuning and inference. There will be log files during execution. Before fine-tuning or inference, please refer to 

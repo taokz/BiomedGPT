@@ -5,10 +5,17 @@ All rights reserved.
 This source code is licensed under the Apache 2.0 license found in the LICENSE file in the root directory.
 -->
 
-# BiomedGPT
-*A Generalist Vision-Language Foundation Model for Diverse Biomedical Tasks.*
+# [Nature Medicine'24] <img src="examples/logo.jpg" alt="logo" width="35">iomedGPT
+*A Generalist Vision-Language Foundation Model for Diverse Biomedical Tasks.* [![Arxiv](https://img.shields.io/badge/arXiv-2305.17100-B21A1B)](https://arxiv.org/abs/2305.17100
+)
 
-[BiomedGPT](https://arxiv.org/abs/2305.17100) is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/biomedgpt-a-unified-and-generalist-biomedical/medical-visual-question-answering-on-vqa)](https://paperswithcode.com/sota/medical-visual-question-answering-on-vqa?p=biomedgpt-a-unified-and-generalist-biomedical)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/biomedgpt-a-unified-and-generalist-biomedical/medical-visual-question-answering-on-pathvqa)](https://paperswithcode.com/sota/medical-visual-question-answering-on-pathvqa?p=biomedgpt-a-unified-and-generalist-biomedical)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/biomedgpt-a-unified-and-generalist-biomedical/image-captioning-on-iu-x-ray)](https://paperswithcode.com/sota/image-captioning-on-iu-x-ray?p=biomedgpt-a-unified-and-generalist-biomedical)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/biomedgpt-a-unified-and-generalist-biomedical/text-summarization-on-meqsum)](https://paperswithcode.com/sota/text-summarization-on-meqsum?p=biomedgpt-a-unified-and-generalist-biomedical)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/biomedgpt-a-unified-and-generalist-biomedical/natural-language-inference-on-mednli)](https://paperswithcode.com/sota/natural-language-inference-on-mednli?p=biomedgpt-a-unified-and-generalist-biomedical)
+
+**BiomedGPT** is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
 
 ## Installation (Linux)
 

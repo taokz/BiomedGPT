@@ -1,36 +1,16 @@
 # Datasets
 
-We provide links to download the raw datasets below, and we share our preprocessed python scripts in the `./scripts/preprocess/` folder. Before processing data, we need to put the downloaded compressed file into `./datasets/` and uncompress it (**change the folder's name if required**). You can also process the data on your own according to the instructions given by <a href="https://github.com/OFA-Sys/OFA#image-processing"> OFA </a>. There are several useful notes below.
+We provide links to download the raw datasets in our paper (the **Data Availability** section), and we share our preprocessed python scripts in the `./scripts/preprocess/` folder. Before processing data, we need to put the downloaded compressed file into `./datasets/` and uncompress it (**change the folder's name if required**). You can also process the data on your own according to the instructions given by <a href="https://github.com/OFA-Sys/OFA#image-processing"> OFA </a>. There are several useful notes below. Additionally, for convenience, we also provide some preprocessed data for fine-tuning and evaluation. However, for restricted datasets such as MIMIC-CXR, please follow our processing codes to handle them by yourselves.
 
-## Pretraining Datasets
- The pretraining datasets used in BiomedGPT are all accessible. However, you should request the access to some datasets. Here we provide the public links to these data, it is recommended that you download the data from the links first, and then process the downloaded dataset using our scripts. 
--   _MedICat_:  https://github.com/allenai/medicat
--   _IU X-ray and Peir Gross_:  https://github.com/nlpaueb/bioCaption
--   _SLAKE_:  https://www.med-vqa.com/slake/
--   _PathVQA_:  https://github.com/UCSD-AI4H/PathVQA/tree/master/data
--   _DeepLesion_:  https://nihcc.app.box.com/v/DeepLesion
--   _OIA-DDR_:  https://github.com/nkicsl/DDR-dataset
--   _CheXpert_:  https://aimi.stanford.edu/chexpert-chest-x-rays
--   _CytoImageNet_: https://github.com/stan-hua/CytoImageNet
--   _ISIC2020_: https://challenge2020.isic-archive.com
--   _Retinal Fundus_: https://www.kaggle.com/c/diabetic-retinopathy-detection
--   _PubMed Abstracts_: https://github.com/ncbi-nlp/BLUE_Benchmark
--   _NCBI BioNLP_: https://www.ncbi.nlm.nih.gov/research/bionlp/Data/
--   _MIMIC-III Clinic Notes_: https://physionet.org/content/mimiciii/1.4/
+## Pre-processed Downstream Datasets (tsv files)
+- **VQA:** <a href="https://www.dropbox.com/scl/fo/14m2f6spes8uiii2283q4/APxHP_cE7EW1ezWLb1ZlGgU?rlkey=zo4tfabbyj1ychiq7xf0lv9ft&st=4zon9c7d&dl=0"> PathVQA </a>, <a href="https://www.dropbox.com/scl/fo/19ld9c6l43v1jwk765hlk/ADU2no3WA4Br4M5NH0INBos?rlkey=ksi5ftbhrotac2xfs1j4d73dw&st=i3jinona&dl=0"> SLAKE </a>, <a href="https://www.dropbox.com/scl/fo/sbx4rtzhq3svqx478rc4q/AIvU0Swu7lmS-FDWN3JeXjw?rlkey=xwglcec0141evvrqmv7o7rpv5&st=zuystjs3&dl=0"> VQA-RAD </a>
+- **Image Captioning:** <a href="https://www.dropbox.com/scl/fo/q2dbzo0asa2ntuur31pcm/AF6IzLj67vILCN_SQ-eFtpc?rlkey=1poxl0hxmcc3ax2nd9ke6bpid&st=vczdse9h&dl=0"> IU X-Ray </a>, <a href="https://www.dropbox.com/scl/fo/zug0ebho6a1b7wqxwzvv5/AIImsIPzug9DBJynGsE9mm4?rlkey=uo0t9pt8pc75i2sx65ikj99jf&st=66ckzjsf&dl=0"> Peir Gross </a>
+- **Image Classification:** <a href="https://www.dropbox.com/scl/fo/ic2a0x1gwjuldy8opnqa6/ADPBixRESC112vkMN67Kw_k?rlkey=jv5qnc897qx7yx1md1c06ib2a&st=3ywo7fzx&dl=0"> MedMNIST (224*224) </a>
+- **Conversation Summarization:** <a href="https://www.dropbox.com/scl/fo/7qlt4sc5kt1au3s9kh71u/AENbPhZdu-QjTRXroc0iBY0?rlkey=ux8ll92n1nw9oiaicqaotub8x&st=1yf5v7j0&dl=0"> HealthcareMagic </a>, <a href="https://www.dropbox.com/t/loMjdszN4GNbEZYT"> MeQSum </a>
+- **Text Understanding:** <a href="https://www.dropbox.com/scl/fi/5famdp91kjyw9r6ium112/trec.zip?rlkey=73lydsn0dssww0z12yuo6ysx5&st=5ktllpd7&dl=0"> TREC'22 (clinical trial matching) </a>
 <br></br>
-
-## Downstream Datasets
-Partial datasets are used in the pretraining 
--   _MedMNIST v2_:  https://zenodo.org/record/6496656
--   _MeQSum_:  https://github.com/abachaa/MeQSum
--   _iCliniq and HealthCareMagic_:  https://github.com/UCSD-AI4H/Medical-Dialogue-System
--   _ROCO_:  https://github.com/razorx89/roco-dataset/tree/master
--   _VQA-RAD_:  https://vision.aioz.io/f/777a3737ee904924bf0d/?dl=1
-<br></br>
-
 
 ## Data Preparation Notes
-- PathVQA's `trainval_ans2label.pkl` is located in `PathVQA/split/qas`.
 - Before preprocessing the VQA-RAD dataset, it's necessary to inspect the data and search for any instances of `\t`. These instances might cause issues and it's recommended to manually remove them. For instance, changing instances like `slee\t n` to `sleen`. Neglecting this step and proceeding with preprocessing could lead to errors during training.
 - For preprocessing the `MedMNIST` dataset, the following steps are employed: First, the `.npy` files are converted to `.png` images using the command `python medmnist.py --mode 0`. Subsequently, these `.png` images are converted into a `.tsv` file using the command `--mode 1`.
 - For pretraining, we provide sample codes for preprocessing image infilling, text-only, captioning, and vqa, respectively. You can process any data you want via following the logic, and remember to concatenate captioning and vqa datasets as `vision_language.tsv`. Shuffling is a good choice for pretraining, e.g., `shuf -o your_file.tsv your_file.tsv`.

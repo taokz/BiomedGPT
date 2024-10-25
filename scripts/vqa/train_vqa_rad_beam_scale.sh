@@ -12,8 +12,7 @@ export MASTER_PORT=8314
 export RANK=0 
 
 data_dir=../../datasets/finetuning/vqa-rad
-# since PubMedCLIP does not have valid set, here we also directly use test set.
-data=${data_dir}/train_val.tsv,${data_dir}/test.tsv
+data=${data_dir}/train.tsv,${data_dir}/val.tsv
 ans2label_file=${data_dir}/trainval_ans2label.pkl
 
 declare -a Scale=('tiny' 'medium' 'base')

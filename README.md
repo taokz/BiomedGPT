@@ -158,4 +158,11 @@ If you use BiomedGPT model or our code for publications, please cite 🤗:
   publisher={Nature Publishing Group US New York}
 }
 ```
+@article{peng2025scaling,
+  title={Scaling Up Biomedical Vision-Language Models: Fine-Tuning, Instruction Tuning, and Multi-Modal Learning},
+  author={Peng, Cheng and Zhang, Kai and Lyu, Mengxian and Liu, Hongfang and Sun, Lichao and Wu, Yonghui},
+  journal={arXiv preprint arXiv:2505.17436},
+  year={2025}
+}
+```
 <br></br>

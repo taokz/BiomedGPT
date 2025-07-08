@@ -17,6 +17,8 @@ This source code is licensed under the Apache 2.0 license found in the LICENSE f
 
 **BiomedGPT** is pre-trained and fine-tuned with multi-modal & multi-task biomedical datasets. Details of used datasets are shown in [datasets.md](datasets.md). If you have any questions, feel free to contact us or post issues. 
 
+- **[2025/07/07]** Released larger-scale checkpoints—up to 5× larger (930M parameters)—including stronger *large* and *xlarge* pre-trained models. [[ckpt](https://www.dropbox.com/sh/cu2r5zkj2r0e6zu/AADZ-KHn-emsICawm9CM4MqVa?dl=0)] [[technical report](https://arxiv.org/pdf/2505.17436)]
+
 ## Installation (Linux)
 
 1. Clone this repository and navigate to the BiomedGPT folder
@@ -157,7 +159,7 @@ If you use BiomedGPT model or our code for publications, please cite 🤗:
   year={2024},
   publisher={Nature Publishing Group US New York}
 }
-```
+
 @article{peng2025scaling,
   title={Scaling Up Biomedical Vision-Language Models: Fine-Tuning, Instruction Tuning, and Multi-Modal Learning},
   author={Peng, Cheng and Zhang, Kai and Lyu, Mengxian and Liu, Hongfang and Sun, Lichao and Wu, Yonghui},
